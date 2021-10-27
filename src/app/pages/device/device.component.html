@@ -1,0 +1,15 @@
+<div class="card text-center">
+    <div class="card-header">
+      Device View: Id {{device.Id}}
+    </div>
+    <div class="card-body">
+        <div><label for="Id" class="col-sm-2 col-form-label">Category: {{device.Category}} - {{device.Name}}</label></div>
+        <div><label for="Id" class="col-sm-2 col-form-label">Color: {{device.Color}}</label></div>
+        <div><label for="Id" class="col-sm-2 col-form-label">partNumber: {{device.partNumber}}</label></div>
+      
+    </div>
+    <div class="card-footer text-muted">
+        <a routerLink="/devices" class="btn btn-danger text-white">Fechar</a>
+    </div>
+</div>
+<router-outlet></router-outlet>

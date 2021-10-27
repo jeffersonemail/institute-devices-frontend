@@ -1,0 +1,29 @@
+<div class="p-3 mb-2 bg-secondary text-white">Devices Management</div>
+<table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category</th>
+        <th scope="col">Color</th>
+        <th scope="col">Part Number</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let device of devices">
+            <td>{{device.Id}}</td>
+            <td>{{device.Category}} - {{device.Name}}</td>
+            <td>{{device.Color}}</td>
+            <td>{{device.partNumber}}</td>
+            <td>
+                <div  class="">
+                    <a routerLink="device" class="badge badge-primary p-2 ml-2"><i class="far fa-eye"></i></a>
+                    <a routerLink="device" class="badge badge-danger p-2 ml-2"><i class="far fa-trash-alt"></i></a>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm">Editar</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+<router-outlet></router-outlet> 
