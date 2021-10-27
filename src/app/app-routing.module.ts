@@ -15,7 +15,7 @@ const routes: Routes = [
             path: 'devices', 
             component: DevicesComponent,
             children: [{
-                path: 'device',
+                path: 'device/:id',
                 component: DeviceComponent
             }] 
         },
@@ -23,7 +23,7 @@ const routes: Routes = [
             path: 'categories', 
             component: CategoriesComponent,
             children: [{
-                path: 'category',
+                path: 'category/:id',
                 component: CategoryComponent
           }] 
         }

@@ -8,7 +8,26 @@ import { CategoryService } from '../../services/category.service';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categories: Category[] | undefined;
+  mock: boolean = true;
+
+  categories: Category[] = [
+    {
+        "Id": 1,
+        "Name": "Celular"
+    },
+    {
+        "Id": 2,
+        "Name": "Computador"
+    },
+    {
+        "Id": 3,
+        "Name": "Notebook"
+    },
+    {
+        "Id": 4,
+        "Name": "Tablet"
+    }
+];
 
   constructor(private categoryService: CategoryService) { }
 
@@ -18,7 +37,9 @@ export class CategoriesComponent implements OnInit {
 
   getCategories() {
     this.categoryService.getCategories().subscribe((categories: Category[]) => {
-      this.categories = categories;
+      if (!this.mock) {
+        this.categories = categories;
+      }
     });
   }
 }

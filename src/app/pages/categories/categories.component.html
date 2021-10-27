@@ -8,13 +8,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">3</th>
-        <td>Name</td>
+      <tr *ngFor="let category of categories">
+        <th scope="row">{{category.Id}}</th>
+        <td>{{category.Name}}</td>
         <td>
             <div  class="">
-                <a routerLink="category" class="badge badge-primary p-2 ml-2"><i class="far fa-eye"></i></a>
-                <a routerLink="category" class="badge badge-danger p-2 ml-2"><i class="far fa-trash-alt"></i></a>
+                <a routerLink="category/{{category.Id}}" class="badge badge-primary p-2 ml-2"><i class="far fa-eye"></i></a>
+                <a routerLink="category/{{category.Id}}" class="badge badge-danger p-2 ml-2"><i class="far fa-trash-alt"></i></a>
             </div>
         </td>   
       </tr>

@@ -17,11 +17,9 @@
             <td>{{device.partNumber}}</td>
             <td>
                 <div  class="">
-                    <a routerLink="device" class="badge badge-primary p-2 ml-2"><i class="far fa-eye"></i></a>
-                    <a routerLink="device" class="badge badge-danger p-2 ml-2"><i class="far fa-trash-alt"></i></a>
+                    <a routerLink="device/{{device.Id}}" class="badge badge-primary p-2 ml-2"><i class="far fa-eye"></i></a>
+                    <a routerLink="device/{{device.Id}}" class="badge badge-danger p-2 ml-2"><i class="far fa-trash-alt"></i></a>
                 </div>
-                <button type="button" class="btn btn-warning btn-sm">Editar</button>
-                <button type="button" class="btn btn-danger btn-sm ml-1">Deletar</button>
             </td>
         </tr>
     </tbody>

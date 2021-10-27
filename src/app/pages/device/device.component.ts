@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Device } from '../../models/device';
 import { DeviceService } from '../../services/device.service';
 
@@ -8,17 +9,27 @@ import { DeviceService } from '../../services/device.service';
   styleUrls: ['./device.component.css']
 })
 export class DeviceComponent implements OnInit {
-  device = {} as Device;
+  mock: boolean = true;
+  
+  device = {
+    "Id": 1,
+    "Category": 1,
+    "Name": "Celular",
+    "Color": "Preto",
+    "partNumber": 152452
+} as Device;
 
-  constructor(private deviceService: DeviceService) { }
+  constructor(private deviceService: DeviceService, private route: ActivatedRoute ) { }
 
   ngOnInit() {
-    this.getDeviceById();
+    this.getDeviceById(this.route.snapshot.params["id"]);
   }
 
-  getDeviceById() {
-    this.deviceService.getDeviceById(1).subscribe((device) => {
-      this.device = device as Device;
+  getDeviceById(id: number) {
+    this.deviceService.getDeviceById(id).subscribe((device) => {
+      if (!this.mock) {
+        this.device = device as Device;
+      }
     });
   }
 }

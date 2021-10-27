@@ -1,2 +1,13 @@
-<p>category works!</p>
+<div class="card text-center">
+    <div class="card-header">
+      Category View: Id {{category.Id}}
+    </div>
+    <div class="card-body">
+        <div><label for="Id" class="col-sm-2 col-form-label">Category: {{category.Name}}</label></div>
+      
+    </div>
+    <div class="card-footer text-muted">
+        <a routerLink="/categories" class="btn btn-danger text-white">Fechar</a>
+    </div>
+</div>
 <router-outlet></router-outlet>
